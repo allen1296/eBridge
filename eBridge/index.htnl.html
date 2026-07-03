@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>eBridge.ai Landing Page</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #071b38;
+  background: #f6fbff;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 28px 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.logo span {
+  color: #4aa3ff;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav a,
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.demo-btn,
+.primary-btn {
+  background: linear-gradient(135deg, #006dff, #2587ff);
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 730px;
+  padding: 145px 45px 180px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  background: radial-gradient(circle at right, #074987, #031529 55%, #020d1d);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 44px;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: #3d99ff;
+}
+
+.hero-text p {
+  max-width: 560px;
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+.hero-badges{
+    display:flex;
+    align-items:center;
+    gap:45px;
+    margin:40px 0;
+}
+
+.badge{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.badge img{
+    width:46px;
+    height:46px;
+    object-fit:contain;
+}
+
+.badge h4{
+    color:#fff;
+    font-size:18px;
+    font-weight:700;
+    margin:0;
+    line-height:1.1;
+}
+
+.badge p{
+    color:#fff;
+    font-size:16px;
+    margin-top:4px;
+    line-height:1.2;
+    opacity:.95;
+}
+
+.hero-badges div {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.watch-btn {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.hero-visual {
+  position: relative;
+  display: grid;
+  grid-template-columns: 160px 1fr 160px;
+  align-items: center;
+  gap: 25px;
+}
+
+.connectors {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.connectors div {
+  background: white;
+  color: #10233f;
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.circle {
+  position: relative;
+  width: 310px;
+  height: 310px;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid #1b9cff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 35px rgba(40,150,255,0.7);
+  animation: pulse 3s infinite;
+}
+
+.brand {
+  position: absolute;
+  top: 15px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.cloud{
+  width:160px;
+  height:130px;
+  border-radius:45%;
+  background:#16a7f8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  color:white;
+}
+
+.health-cloud-logo{
+  width:190px;
+  max-width:90%;
+  height:auto;
+  object-fit:contain;
+  position:relative;
+  z-index:5;
+}
+
+.cloud span {
+  font-size: 22px;
+  margin-top: 12px;
+}
+/* .secure-box{
+    position:absolute;
+    left:50%;
+    bottom:-40px;
+    transform:translateX(-50%);
+
+    width:720px;
+    max-width:90%;
+
+    display:flex;
+    align-items:center;
+    gap:22px;
+
+    padding:24px 28px;
+
+    background:#061728;
+    border:1px solid rgba(76,167,255,.28);
+    border-radius:18px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35);
+
+    z-index:10;
+} */
+
+.secure-content{
+    flex:1;
+}
+
+.secure-content h4{
+    margin:0 0 8px;
+
+    font-size:17px;
+    font-weight:700;
+    color:#ffffff;
+}
+
+.secure-content p{
+    margin:0;
+
+    font-size:14px;
+    line-height:1.6;
+
+    color:#c8d9ec;
+}
+
+/* .secure-box{
+    width:calc(100% - 140px);
+    max-width:760px;
+} */
+
+/* .secure-box {
+  position: absolute;
+  bottom: -75px;
+  left: 80px;
+  right: 80px;
+  border: 1px solid #168fff;
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  gap: 20px;
+  background: rgba(0, 80, 140, 0.25);
+} */
+
+.features,
+.steps {
+  padding: 50px 65px;
+  text-align: center;
+}
+
+.features h2,
+.steps h2 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.cards {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  padding: 42px 25px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+.icon{
+    width:82px;
+    height:82px;
+
+    margin:0 auto 28px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+}
+
+.icon img{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+}
+.blue{
+    background:#E8F1FF;
+}
+
+.green{
+    background:#DDF7EF;
+}
+
+.purple{
+    background:#F1E5FF;
+}
+
+.yellow{
+    background:#FFF4D9;
+}
+
+.icon,
+.step-icon {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: #e8f2ff;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+  font-size: 32px;
+}
+
+.card h3 {
+  margin-bottom: 14px;
+}
+
+.card p,
+.step p {
+  color: #30415f;
+  line-height: 1.6;
+}
+
+.logo-strip{
+  background:#fff;
+  border-radius:14px;
+  padding:18px 28px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.logo-strip{
+    margin-top:50px;   /* Adjust to 30px, 40px, or 50px */
+    background:#fff;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+
+.logo-strip p{
+  color:#071b38;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:16px;
+}
+
+.logo-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  flex-wrap:nowrap;
+}
+
+.logo-row img{
+  max-width:88px;
+  max-height:24px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+}
+
+.more-logo{
+  color:#006dff;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.1;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+@media(max-width:768px){
+  .logo-row{
+    flex-wrap:wrap;
+    gap:18px;
+  }
+
+  .logo-row img{
+    max-width:80px;
+  }
+}
+
+.logo-strip div {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+  font-weight: 700;
+}
+
+.step-wrapper {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: start;
+  gap: 22px;
+}
+
+.arrow {
+  font-size: 45px;
+  color: #c3cedd;
+  padding-top: 30px;
+}
+
+.cta {
+  margin: 30px 42px;
+  padding: 42px 70px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #03142a, #004b8d);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cta h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.phone {
+  line-height: 1.6;
+}
+
+footer {
+  padding: 25px 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #20344f;
+}
+
+footer .logo {
+  color: #073b79;
+  font-size: 28px;
+}
+
+footer nav {
+  display: flex;
+  gap: 26px;
+}
+
+footer a {
+  color: #20344f;
+}
+
+footer p {
+  font-size: 12px;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: 0.8s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 25px rgba(40,150,255,0.45);
+  }
+  50% {
+    box-shadow: 0 0 55px rgba(40,150,255,0.9);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(40,150,255,0.45);
+  }
+}
+
+@media (max-width: 992px) {
+  .nav,
+  .demo-btn {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav.active {
+    position: absolute;
+    top: 80px;
+    left: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    background: #031529;
+    padding: 25px;
+    border-radius: 12px;
+  }
+
+.hero{
+  min-height: 760px;
+  padding: 130px 45px 90px;
+  display: grid;
+  grid-template-columns: 34% 66%;
+  gap: 35px;
+  background: radial-gradient(circle at 72% 42%, #074987, #031529 55%, #020d1d);
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-visual{
+  position: relative;
+  height: 620px;
+}
+
+.secure-box{
+  position: absolute;
+  right: 70px;
+  bottom: -10px;
+
+  width: 720px;
+  min-height: 118px;
+
+  display: flex;
+  align-items: center;
+  gap: 26px;
+
+  padding: 24px 34px;
+
+  background: rgba(3, 18, 35, 0.92);
+  border: 1px solid rgba(64, 167, 255, 0.45);
+  border-radius: 18px;
+
+  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+  z-index: 20;
+}
+
+.lock-icon{
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+  background: linear-gradient(180deg,#147cff,#063a96);
+}
+
+.lock-icon img{
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+}
+
+.secure-content h4{
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.secure-content p{
+  margin: 0;
+  color: #d6e7f7;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+  /* .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    grid-template-columns: 1fr;
+  } */
+
+  .connectors {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .circle {
+    width: 260px;
+    height: 260px;
+  }
+
+  /* .secure-box {
+    position: static;
+    margin-top: 25px;
+  } */
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .step-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .cta {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  footer nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 22px;
+  }
+
+  .hero {
+    padding: 120px 25px 50px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-badges,
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  
+  .features{
+    background:#f5f9ff;
+    padding:80px 60px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:48px;
+    font-weight:700;
+    color:#0b2247;
+    margin-bottom:12px;
+}
+
+.section-title p{
+    font-size:22px;
+    color:#53657f;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.feature-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:48px 35px;
+
+    text-align:center;
+
+    box-shadow:
+        0 12px 35px rgba(12,47,91,.08);
+
+    transition:.35s;
+}
+
+.feature-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(12,47,91,.12);
+}
+
+.icon{
+
+    width:82px;
+
+    height:82px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    margin-bottom:30px;
+}
+
+.icon img{
+
+    width:36px;
+
+    height:36px;
+
+    object-fit:contain;
+}
+
+.blue{
+    background:#e9f2ff;
+}
+
+.green{
+    background:#dff8ef;
+}
+
+.purple{
+    background:#f0e5ff;
+}
+
+.yellow{
+    background:#fff5d9;
+}
+
+.feature-card h3{
+
+    font-size:30px;
+
+    color:#0a2348;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+}
+
+.feature-card p{
+
+    font-size:19px;
+
+    line-height:1.8;
+
+    color:#596a84;
+}
+
+@media(max-width:1200px){
+
+.feature-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.features{
+
+  padding:60px 25px;
+
+}
+
+.feature-grid{
+
+  grid-template-columns:1fr;
+
+}
+
+.section-title h2{
+
+  font-size:36px;
+
+}
+
+.feature-card h3{
+
+  font-size:24px;
+
+}
+
+.feature-card p{
+
+  font-size:17px;
+
+}
+
+}
+  .steps {
+    padding: 45px 25px;
+  }
+
+  .cta {
+    margin: 25px;
+    padding: 35px 25px;
+  }
+}
+
+/* Updated hero banner visual with logo cards around the Salesforce Health Cloud circle */
+.hero {
+  min-height: 760px;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 35px;
+  background:
+    radial-gradient(circle at 73% 43%, rgba(0, 132, 255, 0.35), transparent 32%),
+    radial-gradient(circle at 46% 50%, rgba(0, 132, 255, 0.14), transparent 35%),
+    linear-gradient(135deg, #020817 0%, #04182d 55%, #020817 100%);
+  overflow: hidden;
+}
+
+.hero-visual {
+  position: relative;
+  display: block;
+  height: 620px;
+  min-width: 690px;
+}
+
+.hero-brand-top {
+  position: absolute;
+  left: 50%;
+  top: 48px;
+  transform: translateX(-50%);
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1px;
+  z-index: 5;
+}
+
+.hero-brand-top span {
+  color: #4aa3ff;
+}
+
+.logo-card {
+  position: absolute;
+  width: 172px;
+  height: 76px;
+  background: linear-gradient(180deg, #ffffff 0%, #eef3f8 100%);
+  border: 1px solid rgba(255,255,255,0.75);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  box-shadow:
+    0 14px 30px rgba(0,0,0,0.30),
+    inset 0 1px 0 rgba(255,255,255,0.95);
+  z-index: 4;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.logo-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 38px rgba(0,0,0,0.35),
+    0 0 18px rgba(66,170,255,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.95);
+}
+
+.logo-card img {
+  max-width: 132px;
+  max-height: 42px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-card span {
+  color: #133153;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.1;
+  position: absolute;
+  padding: 0 10px;
+}
+
+.left-1 { left: 8px; top: 112px; }
+.left-2 { left: 8px; top: 238px; }
+.left-3 { left: 8px; top: 364px; }
+.left-4 { left: 8px; top: 490px; }
+
+.right-1 { right: 8px; top: 112px; }
+.right-2 { right: 8px; top: 238px; }
+.right-3 { right: 8px; top: 364px; }
+.right-4 { right: 8px; top: 490px; }
+
+.connector-line {
+  position: absolute;
+  height: 0;
+  border-top: 3px dotted rgba(210, 232, 255, .9);
+  z-index: 1;
+}
+
+.connector-line::before,
+.connector-line::after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #8fd0ff;
+  box-shadow: 0 0 18px #2ea4ff, 0 0 32px rgba(46,164,255,.65);
+}
+
+.connector-line::before { left: -5px; }
+.connector-line::after { right: -5px; }
+
+.l1 {
+  width: 148px;
+  left: 176px;
+  top: 165px;
+  transform: rotate(38deg);
+}
+
+.l2 {
+  width: 114px;
+  left: 182px;
+  top: 287px;
+  transform: rotate(14deg);
+}
+
+.l3 {
+  width: 114px;
+  left: 182px;
+  top: 414px;
+  transform: rotate(-14deg);
+}
+
+.l4 {
+  width: 148px;
+  left: 176px;
+  top: 536px;
+  transform: rotate(-38deg);
+}
+
+.r1 {
+  width: 148px;
+  right: 176px;
+  top: 165px;
+  transform: rotate(-38deg);
+}
+
+.r2 {
+  width: 114px;
+  right: 182px;
+  top: 287px;
+  transform: rotate(-14deg);
+}
+
+.r3 {
+  width: 114px;
+  right: 182px;
+  top: 414px;
+  transform: rotate(14deg);
+}
+
+.r4 {
+  width: 148px;
+  right: 176px;
+  top: 536px;
+  transform: rotate(38deg);
+}
+
+.circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 292px;
+  height: 292px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(64, 170, 255, .95);
+  display: grid;
+  place-items: center;
+  box-shadow:
+    0 0 24px rgba(30, 150, 255, .95),
+    inset 0 0 38px rgba(30, 150, 255, .45);
+  animation: pulse 3s infinite ease-in-out;
+  z-index: 2;
+}
+
+.circle::before,
+.circle::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.circle::before {
+  inset: 18px;
+  border: 1px solid rgba(95, 190, 255, .60);
+  box-shadow: inset 0 0 22px rgba(30,150,255,.25);
+}
+
+.circle::after {
+  inset: -22px;
+  border: 2px dashed rgba(95, 190, 255, .55);
+  animation: spin 18s linear infinite;
+}
+
+.cloud {
+  position: relative;
+  width: 165px;
+  height: 100px;
+  border-radius: 52px;
+  background: #19a8f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #ffffff;
+  z-index: 3;
+  box-shadow: 0 0 30px rgba(25,168,245,.35);
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: #19a8f5;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.cloud::before {
+  width: 82px;
+  height: 82px;
+  left: 20px;
+  top: -28px;
+}
+
+.cloud::after {
+  width: 92px;
+  height: 92px;
+  right: 16px;
+  top: -22px;
+}
+
+.cloud strong {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.cloud span {
+  position: absolute;
+  left: 50%;
+  top: 132px;
+  transform: translateX(-50%);
+  width: max-content;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.more-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  color: #ffffff;
+  border: 1px solid rgba(145, 205, 255, .85);
+  border-radius: 14px;
+  padding: 12px 42px;
+  font-size: 18px;
+  font-weight: 700;
+  background: rgba(3, 24, 46, .82);
+  box-shadow: 0 0 14px rgba(0,132,255,.25);
+  z-index: 5;
+}
+
+.secure-box {
+  position: absolute;
+  left: 65px;
+  right: 120px;
+  bottom: -130px;
+  min-height: 118px;
+  border: 1px solid rgba(67, 163, 255, .55);
+  border-radius: 18px;
+  padding: 24px 30px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  background: rgba(4, 18, 35, .78);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+  z-index: 6;
+}
+
+.lock-icon{
+    width:74px;
+    height:74px;
+
+    flex-shrink:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:14px;
+
+    background:linear-gradient(180deg,#1d66d8,#0c4da8);
+}
+
+.lock-icon img{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+}
+
+/* .lock-icon{
+    width:90px;
+    height:90px;
+    flex-shrink:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:16px;
+
+    background:linear-gradient(180deg,#0c4da8,#08347c);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.15),
+        0 10px 30px rgba(0,0,0,.35);
+} */
+
+.lock-icon img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
+.secure-box h4 {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.secure-box p {
+  color: #d6ebff;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 1180px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    margin: 10px auto 0;
+    transform: scale(.88);
+    transform-origin: top center;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-visual {
+    min-width: 0;
+    width: 100%;
+    height: auto;
+    transform: none;
+    display: grid;
+    gap: 18px;
+  }
+
+  .hero-brand-top,
+  .connector-line,
+  .more-btn {
+    display: none;
+  }
+
+  .logo-card,
+  .left-1,
+  .left-2,
+  .left-3,
+  .left-4,
+  .right-1,
+  .right-2,
+  .right-3,
+  .right-4,
+  .circle,
+  .secure-box {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+
+  .logo-card {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .circle {
+    width: 260px;
+    height: 260px;
+    margin: 20px auto;
+  }
+
+  .cloud span {
+    top: 124px;
+    font-size: 24px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">eBridge<span>.ai</span></div>
+
+  <nav class="nav" id="navMenu">
+    <a href="#">Solutions</a>
+    <a href="#">EMR & PM Connectors</a>
+    <a href="#">Platform</a>
+    <a href="#">Pricing</a>
+    <a href="#">Resources</a>
+    <a href="#">About Us</a>
+  </nav>
+
+  <a href="#" class="demo-btn">Request a Demo</a>
+
+  <button class="menu-btn" id="menuBtn">☰</button>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>
+      Secure. Seamless.<br />
+      Smart Connectivity.<br />
+      <span>Salesforce Health Cloud</span><br />
+      Connected to <span>Everything.</span>
+    </h1>
+
+    <p>
+      eBridge.ai is the leading HIPAA compliant integration solution that connects Salesforce Health Cloud with all major EMRs and Practice Management systems.
+    </p>
+
+    <div class="hero-badges">
+
+      <div class="badge">
+          <img src="C:\Users\My PC\Desktop\eBridge\shield.png" alt="HIPAA">
+          <div>
+              <h4>HIPAA</h4>
+              <p>Compliant</p>
+          </div>
+      </div>
+
+      <div class="badge">
+          <img src="C:\Users\My PC\Desktop\eBridge\fast-charge.png" alt="Fast Implementation">
+          <div>
+              <h4>Fast</h4>
+              <p>Implementation</p>
+          </div>
+      </div>
+
+      <div class="badge">
+          <img src="C:\Users\My PC\Desktop\eBridge\24-hours-support.png" alt="24/7 Support">
+          <div>
+              <h4>24/7</h4>
+              <p>Support Included</p>
+          </div>
+      </div>
+
+    </div>
+
+    <div class="hero-actions">
+      <a href="#" class="primary-btn">Request a Demo →</a>
+      <a href="#" class="watch-btn">▷ See How It Works</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-brand-top">eBridge<span>.ai</span></div>
+
+    <div class="logo-card left-1">
+      <img src="C:\Users\My PC\Desktop\eBridge\Epic.png" alt="Epic" onerror="this.style.display='none'">
+
+    </div>
+
+    <div class="logo-card left-2">
+      <img src="C:\Users\My PC\Desktop\eBridge\eclinicalworks.png" alt="eClinicalWorks" onerror="this.style.display='none'">
+
+    </div>
+
+    <div class="logo-card left-3">
+      <img src="C:\Users\My PC\Desktop\eBridge\Athenahealth.png" alt="athenahealth" onerror="this.style.display='none'">
+    
+    </div>
+
+    <div class="logo-card left-4">
+      <img src="C:\Users\My PC\Desktop\eBridge\cerner.png" alt="Cerner" onerror="this.style.display='none'">
+    
+    </div>
+
+    <div class="logo-card right-1">
+      <img src="C:\Users\My PC\Desktop\eBridge\nextgen.png" alt="NextGen Healthcare" onerror="this.style.display='none'">
+     
+    </div>
+
+    <div class="logo-card right-2">
+      <img src="C:\Users\My PC\Desktop\eBridge\Meditech.png" alt="MEDITECH" onerror="this.style.display='none'">
+      
+    </div>
+
+    <div class="logo-card right-3">
+      <img src="C:\Users\My PC\Desktop\eBridge\Allscripts.png" alt="Allscripts" onerror="this.style.display='none'">
+      
+    </div>
+
+    <div class="logo-card right-4">
+      <img src="C:\Users\My PC\Desktop\eBridge\advancedMD.png" alt="AdvancedMD" onerror="this.style.display='none'">
+      
+    </div>
+
+    <div class="connector-line l1"></div>
+    <div class="connector-line l2"></div>
+    <div class="connector-line l3"></div>
+    <div class="connector-line l4"></div>
+    <div class="connector-line r1"></div>
+    <div class="connector-line r2"></div>
+    <div class="connector-line r3"></div>
+    <div class="connector-line r4"></div>
+
+    <div class="circle">
+      <div>
+        <img src="C:\Users\My PC\Desktop\eBridge\HealthCloud.png" alt="health cloud" class="health-cloud-logo">
+      </div>
+    </div>
+
+    <div class="more-btn">And 50+ More</div>
+
+  <div class="secure-box">
+    <div class="lock-icon">
+      <img src="C:\Users\My PC\Desktop\eBridge\padlock1.png" alt="Security">
+    </div>
+
+    <div class="secure-content">
+      <h4>Built for Healthcare. Secured for Trust.</h4>
+      <p>End-to-end encryption, audit logs, and role-based access. Your data is always protected.</p>
+    </div>
+  </div>  
+
+    <!-- <div class="secure-box">
+      <div class="lock-icon">
+        <img src="C:\Users\My PC\Desktop\eBridge\padlock1.png" alt="Security">
+      </div>
+
+      <div class="secure-content">
+        <h4>Built for Healthcare. Secured for Trust.</h4>
+        <p>End-to-end encryption, audit logs, and role-based access. Your data is always protected.</p>
+      </div>
+    </div> -->
+</section>
+
+<section class="features">
+  <h2>Why Providers Choose eBridge.ai</h2>
+  <p>Powerful Connectivity. Exceptional Experience.</p>
+
+    <div class="cards">
+
+    <div class="card">
+        <div class="icon blue">
+            <img src="C:\Users\My PC\Desktop\eBridge\coin.png" alt="Great Price">
+        </div>
+
+        <h3>Great Price</h3>
+
+        <p>
+            Affordable, transparent pricing with everything you need.
+            No hidden fees.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon green">
+            <img src="C:\Users\My PC\Desktop\eBridge\car.png" alt="Quick Implementation">
+        </div>
+
+        <h3>Quick Implementation</h3>
+
+        <p>
+            Get connected in days, not months.
+            Pre-built connectors and expert onboarding.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon purple">
+            <img src="C:\Users\My PC\Desktop\eBridge\microphone.png" alt="24/7 Support Included">
+        </div>
+
+        <h3>24/7 Support Included</h3>
+
+        <p>
+            Real humans. Real support.
+            24/7/365 at no extra cost with every contract.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon yellow">
+            <img src="C:\Users\My PC\Desktop\eBridge\quality.png" alt="HIPAA Compliant">
+        </div>
+
+        <h3>HIPAA Compliant</h3>
+
+        <p>
+            Built on a secure, scalable architecture with enterprise-grade compliance.
+        </p>
+    </div>
+
+</div>
+  <!-- <div class="cards">
+    <div class="card">
+      <div class="icon">💲</div>
+      <h3>Great Price</h3>
+      <p>Affordable, transparent pricing with everything you need. No hidden fees.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Quick Implementation</h3>
+      <p>Get connected in days, not months. Pre-built connectors and expert onboarding.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎧</div>
+      <h3>24/7 Support Included</h3>
+      <p>Real humans. Real support. 24/7/365 at no extra cost with every contract.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛡</div>
+      <h3>HIPAA Compliant</h3>
+      <p>Built on a secure, scalable architecture with enterprise-grade compliance.</p>
+    </div> -->
+  </div>
+
+  <div class="logo-strip">
+    <p><h3>Connect with the EMR & Practice Management systems you already use</h3></p>
+    <div class="logo-row">
+      <img src="C:\Users\My PC\Desktop\eBridge\Epic.png" alt="Epic">
+      <img src="C:\Users\My PC\Desktop\eBridge\eclinicalworks.png" alt="eClinicalWorks">
+      <img src="C:\Users\My PC\Desktop\eBridge\Athenahealth.png" alt="athenahealth">
+      <img src="C:\Users\My PC\Desktop\eBridge\cerner.png" alt="Cerner">
+      <img src="C:\Users\My PC\Desktop\eBridge\nextgen.png" alt="NextGen Healthcare">
+      <img src="C:\Users\My PC\Desktop\eBridge\Meditech.png" alt="MEDITECH">
+      <img src="C:\Users\My PC\Desktop\eBridge\Allscripts.png" alt="Allscripts">
+      <img src="C:\Users\My PC\Desktop\eBridge\advancedMD.png" alt="AdvancedMD">
+
+      <a href="#" class="more-logo">+50 More</a>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <h2>How eBridge.ai Works</h2>
+
+  <div class="step-wrapper">
+    <div class="step">
+      <div class="step-icon">🔌</div>
+      <h3>1. Connect</h3>
+      <p>We connect to your EMR/PM system securely.</p>
+    </div>
+
+    <div class="arrow">→</div>
+
+    <div class="step">
+      <div class="step-icon">↔</div>
+      <h3>2. Map & Sync</h3>
+      <p>We map the data you need and start synchronization.</p>
+    </div>
+
+    <div class="arrow">→</div>
+
+    <div class="step">
+      <div class="step-icon">🛡</div>
+      <h3>3. Flow Securely</h3>
+      <p>Data flows bi-directionally between your system and Salesforce Health Cloud.</p>
+    </div>
+
+    <div class="arrow">→</div>
+
+    <div class="step">
+      <div class="step-icon">📊</div>
+      <h3>4. Drive Better Outcomes</h3>
+      <p>Unified data. Better insights. Better patient care.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div>
+    <h2>Ready to Bridge the Gap?</h2>
+    <p>Connect your systems. Empower your team. Improve patient care.</p>
+  </div>
+
+  <a href="#" class="primary-btn">Request a Demo →</a>
+
+  <div class="phone">
+    📞 Talk to an Expert<br />
+    <strong>(833) 327-2447</strong>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">eBridge<span>.ai</span></div>
+
+  <nav>
+    <a href="#">Solutions</a>
+    <a href="#">Platform</a>
+    <a href="#">Connectors</a>
+    <a href="#">Resources</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact Us</a>
+  </nav>
+
+  <p>© 2025 eBridge.ai. All rights reserved.</p>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+
+menuBtn.addEventListener("click", function () {
+  navMenu.classList.toggle("active");
+});
+
+const animatedItems = document.querySelectorAll(".card, .step, .logo-strip, .cta");
+
+animatedItems.forEach(function (item) {
+  item.classList.add("fade");
+});
+
+function revealOnScroll() {
+  animatedItems.forEach(function (item) {
+    const itemTop = item.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (itemTop < windowHeight - 80) {
+      item.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+</script>
+
+</body>
+</html>
